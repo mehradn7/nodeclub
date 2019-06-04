@@ -1,8 +1,33 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.12.0
-ignore: {}
+version: v1.13.5
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  'npm:shelljs:20140723':
+    - pm2 > shelljs:
+        reason: None given
+        expires: '2019-07-04T09:58:42.285Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:tunnel-agent:20170305':
     - jpush-sdk > request > tunnel-agent:
         patched: '2018-07-01T04:07:14.342Z'
+  'npm:debug:20170905':
+    - compression > debug:
+        patched: '2019-06-04T09:57:52.002Z'
+  'npm:hoek:20180212':
+    - jpush-sdk > request > hawk > sntp > hoek:
+        patched: '2019-06-04T09:57:52.002Z'
+    - jpush-sdk > request > hawk > boom > hoek:
+        patched: '2019-06-04T09:57:52.002Z'
+    - loader-builder > less > request > hawk > hoek:
+        patched: '2019-06-04T09:57:52.002Z'
+    - loader-builder > less > request > hawk > sntp > hoek:
+        patched: '2019-06-04T09:57:52.002Z'
+    - loader-builder > less > request > hawk > boom > hoek:
+        patched: '2019-06-04T09:57:52.002Z'
+    - jpush-sdk > request > hawk > cryptiles > boom > hoek:
+        patched: '2019-06-04T09:57:52.002Z'
+    - loader-builder > less > request > hawk > cryptiles > boom > hoek:
+        patched: '2019-06-04T09:57:52.002Z'
+    - jpush-sdk > request > hawk > hoek:
+        patched: '2019-06-04T09:57:52.002Z'
